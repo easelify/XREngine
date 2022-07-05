@@ -140,7 +140,7 @@ const App = (): any => {
       setDescription(clientSetting?.siteDescription)
       setClientThemeSettings(clientSetting?.themeSettings)
     }
-    ClientSettingService.fetchClientSettings()
+    if (clientSettingState?.updateNeeded?.value) ClientSettingService.fetchClientSettings()
   }, [clientSettingState?.updateNeeded?.value])
 
   useEffect(() => {
